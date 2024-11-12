@@ -1,133 +1,32 @@
+<html>
+    <head>
+        <title> Class and Object Demo</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <form action="index.php" method="POST" class="space-y-4 px-10 py-5">
+            <label for="fname" class="block text-sm font-medium text-gray-700">First Name:</label>
+            <input name="fname" type="text" placeholder="*" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"  required>
+            
+            <label for="lname" class="block text-sm font-medium text-gray-700">Last Name:</label>
+            <input name="lname" type="text" placeholder="*" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"  required>
 
+            <label for="mi" class="block text-sm font-medium text-gray-700">Middle Initial:</label>
+            <input name="mi" type="text" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+            <label for="age" class="block text-sm font-medium text-gray-700">Age:</label>
+            <input name="age" type="text" placeholder="*" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"  required>
 
-    <title>Output</title>
-</head>
-<body>
-    <?php
-        $person = new FormInfoClass();
-        $person->setFirstName($_POST["fname"]);
-        $person->setLastName($_POST["lname"]);
-        $person->setMiddleInitial($_POST["mi"]);
-        $person->setAge($_POST["age"]);
-        $person->setContactNo($_POST["contact"]);
-        $person->setEmail($_POST["email"]); 
-        $person->setAddress($_POST["address"]);
+            <label for="contact" class="block text-sm font-medium text-gray-700">Contact Number:</label>
+            <input name="contact" type="text" placeholder="*" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"  required>
 
-    ?>
-    <div class="max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden mt-6 p-6">
-        <h2 class="text-xl font-bold text-gray-800 mb-4 text-center">Person Information</h2>
-        <div class="space-y-2">
-            <div class="flex gap-3">
-                <span class="font-medium text-gray-600">First Name:</span>
-                <span class="text-gray-800"><?php echo htmlspecialchars($person->getFirstName()); ?></span>
-            </div>
-            <div class="flex gap-3">
-                <span class="font-medium text-gray-600">Last Name:</span>
-                <span class="text-gray-800"><?php echo htmlspecialchars($person->getLastName()); ?></span>
-            </div>
-            <div class="flex gap-3">
-                <span class="font-medium text-gray-600">Middle Initial:</span>
-                <span class="text-gray-800"><?php echo htmlspecialchars($person->getMiddleInitial()); ?></span>
-            </div>
-            <div class="flex gap-3">
-                <span class="font-medium text-gray-600">Age:</span>
-                <span class="text-gray-800"><?php echo htmlspecialchars($person->getAge()); ?></span>
-            </div>
-            <div class="flex gap-3">
-                <span class="font-medium text-gray-600">Contact Number:</span>
-                <span class="text-gray-800"><?php echo htmlspecialchars($person->getContactNo()); ?></span>
-            </div>
-            <div class="flex gap-3">
-                <span class="font-medium text-gray-600">Email:</span>
-                <span class="text-gray-800"><?php echo htmlspecialchars($person->getEmail()); ?></span>
-            </div>
-            <div class="flex gap-3">
-                <span class="font-medium text-gray-600">Address:</span>
-                <span class="text-gray-800"><?php echo htmlspecialchars($person->getAddress()); ?></span>
-            </div>
-        </div>
-    </div>
-</body>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
+            <input name="email" type="text" placeholder="*" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"  required>
+
+            <label for="address" class="block text-sm font-medium text-gray-700">Address:</label>
+            <input name="address" type="text" placeholder="*" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2"  required>
+
+            <input type="submit" class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+        </form>
+    </body>
 </html>
-<?php
-    class FormInfoClass{
-        private $last_name;
-        private $first_name;
-        private $middle_initial;
-        private $age;
-        private $contact_no;
-        private $email;
-        private $address;
-        
-        // Getter and Setter for last_name
-        public function getLastName() {
-            return $this->last_name;
-        }
-
-        public function setLastName($last_name) {
-            $this->last_name = $last_name;
-        }
-
-        // Getter and Setter for first_name
-        public function getFirstName() {
-            return $this->first_name;
-        }
-
-        public function setFirstName($first_name) {
-            $this->first_name = $first_name;
-        }
-
-        // Getter and Setter for middle_initial
-        public function getMiddleInitial() {
-            return $this->middle_initial;
-        }
-
-        public function setMiddleInitial($middle_initial) {
-            $this->middle_initial = $middle_initial;
-        }
-
-        // Getter and Setter for age
-        public function getAge() {
-            return $this->age;
-        }
-
-        public function setAge($age) {
-            $this->age = $age;
-        }
-
-        // Getter and Setter for contact_no
-        public function getContactNo() {
-            return $this->contact_no;
-        }
-
-        public function setContactNo($contact_no) {
-            $this->contact_no = $contact_no;
-        }
-
-        // Getter and Setter for email
-        public function getEmail() {
-            return $this->email;
-        }
-
-        public function setEmail($email) {
-            $this->email = $email;
-        }
-
-        // Getter and Setter for address
-        public function getAddress() {
-            return $this->address;
-        }
-
-        public function setAddress($address) {
-            $this->address = $address;
-        }
-    }
-?>
